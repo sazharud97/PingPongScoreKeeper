@@ -14,8 +14,28 @@
 </head>
 
 <body>
-    <h3>Ping Pong Score Keeper</h3>
-    <h2 id="scoreboard"></h2>
+    <section class="container-fluid p-5">
+        <div class="row align-items-center">
+            <h3>Ping Pong Score Keeper</h3>
+            <h2 class="display-2" id="scoreboard"></h2>
+            <p>Use the buttons below to keep score</p>
+            <label for="scoreLimit"><b>Playing to </b></label>
+            <select id="scoreLimit" class="form-select w-auto">
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+        </div>
+        <div class="row align-items-center" id="">
+            <button id="pointP1" class="w-auto">+1 Player One</button>
+            <button id="pointP2" class="w-auto">+1 Player Two</button>
+            <button id="resetButton" class="w-auto">Reset</button>
+        </div>
+    </section>
+
+
 
     <!--Bootstrap script-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
