@@ -1,15 +1,15 @@
 const scoreboard = document.querySelector('#scoreboard');
 const scoreSelect = document.querySelector('#scoreLimit');
-var maxScore = parseInt(document.querySelector('#scoreLimit option:checked').value);
+let maxScore = parseInt(document.querySelector('#scoreLimit option:checked').value);
 
 // buttons
-var pointP1 = document.querySelector('#pointP1');
-var pointP2 = document.querySelector('#pointP2');
-var resetButton = document.querySelector('#resetButton');
+let pointP1 = document.querySelector('#pointP1');
+let pointP2 = document.querySelector('#pointP2');
+let resetButton = document.querySelector('#resetButton');
 
 // score reader spans
-var p1Display = document.querySelector('#p1Display');
-var p2Display = document.querySelector('#p2Display');
+let p1Display = document.querySelector('#p1Display');
+let p2Display = document.querySelector('#p2Display');
 
 
 let scoreP1 = 0;
