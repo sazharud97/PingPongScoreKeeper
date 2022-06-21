@@ -45,13 +45,9 @@ pointP2.addEventListener('click', function () {
         }
         p2Display.textContent = `${scoreP2}`;
     }
-    else {
-        pointP2.disabled = true;
-        p2Display.style.color = 'green';
-        p1Display.style.color = 'red';
-    }
 })
 
+// As advertised, resets everything back to square one
 resetButton.addEventListener('click', function () {
     scoreP1 = 0;
     scoreP2 = 0;
