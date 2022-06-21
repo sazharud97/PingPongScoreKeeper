@@ -45,7 +45,6 @@
                                 <p class="subtitle is-6">Use the buttons below to keep score</p>
                             </div>
                         </div>
-
                         <div class="content">
                             <label for="scoreLimit"><b>Playing to </b></label>
                             <select id="scoreLimit" class="form-select w-auto">
@@ -56,12 +55,18 @@
                                 <option value="9">9</option>
                             </select>
                         </div>
-                        <div class="row align-items-center" id="">
-                            <button id="pointP1" class="w-auto btn-success">+1 Player One</button>
-                            <button id="pointP2" class="w-auto btn-primary">+1 Player Two</button>
-                            <button id="resetButton" class="w-auto btn-danger">Reset</button>
-                        </div>
                     </div>
+                    <footer class="card-footer">
+                        <button id="pointP1" class="is-primary button card-footer-item">
+                            +1 Player One
+                        </button>
+                        <button id="pointP2" class="is-info button card-footer-item">
+                            +1 Player Two
+                        </button>
+                        <button id="resetButton" class="is-danger button card-footer-item">
+                            Reset
+                        </button>
+                    </footer>
                 </div>
             </div>
         </div>

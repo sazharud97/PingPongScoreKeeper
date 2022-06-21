@@ -27,6 +27,7 @@ pointP1.addEventListener('click', function () {
         // checks on click if player won.
         if (scoreP1 === maxScore) {
             pointP1.disabled = true;
+            pointP2.disabled = true;
             p1Display.classList.add('winner');
             p2Display.classList.add('loser');
         }
@@ -41,6 +42,7 @@ pointP2.addEventListener('click', function () {
         // checks on click if player won.
         if (scoreP2 === maxScore) {
             pointP2.disabled = true;
+            pointP1.disabled = true;
             p2Display.classList.add('winner');
             p1Display.classList.add('loser');
         }
