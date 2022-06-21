@@ -58,6 +58,7 @@ function reset() {
     p1Display.textContent = `${scoreP1}`;
     pointP1.disabled = false;
     pointP2.disabled = false;
+    // removes classes so that they can be re-added on subsequent games
     p1Display.classList.remove('winner', 'loser');
     p2Display.classList.remove('winner', 'loser');
 
