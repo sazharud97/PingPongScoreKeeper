@@ -23,20 +23,26 @@ scoreSelect.addEventListener('change', function () {
 pointP1.addEventListener('click', function () {
     if (scoreP1 < maxScore) {
         scoreP1++;
+        // checks on click if player won.
+        if (scoreP1 === maxScore) {
+            pointP1.disabled = true;
+            p1Display.style.color = 'green';
+            p2Display.style.color = 'red';
+        }
         p1Display.textContent = `${scoreP1}`;
     }
-    else {
-        pointP1.disabled = true;
-        p2Display.style.color = 'green';
-        p1Display.style.color = 'red';
-    }
-
 })
 
 // p2 button logic
 pointP2.addEventListener('click', function () {
     if (scoreP2 < maxScore) {
         scoreP2++;
+        // checks on click if player won.
+        if (scoreP2 === maxScore) {
+            pointP2.disabled = true;
+            p2Display.style.color = 'green';
+            p1Display.style.color = 'red';
+        }
         p2Display.textContent = `${scoreP2}`;
     }
     else {
