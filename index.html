@@ -22,9 +22,12 @@
 </head>
 
 <body>
+    <!--Bulma convention dictates wrapping everything in a section, plus more spacing-->
     <section class="section">
         <div class="container">
+            <!--Just the one column-->
             <div class="columns">
+                <!--column classes center the card-->
                 <div class="column is-half is-offset-one-quarter">
                     <div class="card">
                         <header class="card-header">
@@ -41,12 +44,14 @@
                         <div class="card-content">
                             <div class="media">
                                 <div class="media-content">
+                                    <!--Score display-->
                                     <p class="title is-3" id="scoreboard"><span id="p1Display">0</span> to <span
                                             id="p2Display">0</span></p>
                                     <p class="subtitle is-6">Use the buttons below to keep score</p>
                                 </div>
                             </div>
                             <div class="content">
+                                <!--score select label and dropdown-->
                                 <label for="scoreLimit" class="label is-large is-inline"><b>Playing to </b></label>
                                 <div class="select is-rounded">
                                     <select id="scoreLimit" class="form-select w-auto">
@@ -59,6 +64,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!--footer contains all the buttons-->
                         <footer class="card-footer">
                             <button id="pointP1" class="is-primary button card-footer-item">
                                 +1 Player One
