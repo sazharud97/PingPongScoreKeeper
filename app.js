@@ -1,19 +1,43 @@
+const p1 = {
+    score: 0,
+    button: document.querySelector('#pointP1'),
+    display: document.querySelector('#p1Display')
+}
+const p2 = {
+    score: 0,
+    button: document.querySelector('#pointP2'),
+    display: document.querySelector('#p2Display')
+}
+
 const scoreboard = document.querySelector('#scoreboard');
 const scoreSelect = document.querySelector('#scoreLimit');
 let maxScore = parseInt(document.querySelector('#scoreLimit option:checked').value);
 
 // buttons
-let pointP1 = document.querySelector('#pointP1');
-let pointP2 = document.querySelector('#pointP2');
+// let pointP1 = document.querySelector('#pointP1');
+// let pointP2 = document.querySelector('#pointP2');
 let resetButton = document.querySelector('#resetButton');
 
 // score reader spans
-let p1Display = document.querySelector('#p1Display');
-let p2Display = document.querySelector('#p2Display');
+// let p1Display = document.querySelector('#p1Display');
+// let p2Display = document.querySelector('#p2Display');
 
 
-let scoreP1 = 0;
-let scoreP2 = 0;
+// let scoreP1 = 0;
+// let scoreP2 = 0;
+function updateScores(player, opponent) {
+    if (player.score < maxScore) {
+        player.score++;
+        // checks on click if player won.
+        if (player.score === maxScore) {
+            player.button.disabled = true;
+            opponent.button.disabled = true;
+            player.display.classList.add('winner');
+            opponent.display.classList.add('loser');
+        }
+        player.display.textContent = `${player.score}`;
+    }
+}
 
 scoreSelect.addEventListener('change', function () {
     maxScore = parseInt(this.value);
@@ -21,33 +45,13 @@ scoreSelect.addEventListener('change', function () {
 })
 
 // p1 button logic
-pointP1.addEventListener('click', function () {
-    if (scoreP1 < maxScore) {
-        scoreP1++;
-        // checks on click if player won.
-        if (scoreP1 === maxScore) {
-            pointP1.disabled = true;
-            pointP2.disabled = true;
-            p1Display.classList.add('winner');
-            p2Display.classList.add('loser');
-        }
-        p1Display.textContent = `${scoreP1}`;
-    }
+p1.button.addEventListener('click', function () {
+    updateScores(p1, p2);
 })
 
 // p2 button logic
-pointP2.addEventListener('click', function () {
-    if (scoreP2 < maxScore) {
-        scoreP2++;
-        // checks on click if player won.
-        if (scoreP2 === maxScore) {
-            pointP2.disabled = true;
-            pointP1.disabled = true;
-            p2Display.classList.add('winner');
-            p1Display.classList.add('loser');
-        }
-        p2Display.textContent = `${scoreP2}`;
-    }
+p2.button.addEventListener('click', function () {
+    updateScores(p2, p1)
 })
 
 // As advertised, resets everything back to square one
