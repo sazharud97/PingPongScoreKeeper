@@ -58,17 +58,11 @@ p2.button.addEventListener('click', function () {
 resetButton.addEventListener('click', reset)
 
 function reset() {
-    scoreP1 = 0;
-    scoreP2 = 0;
-    p2Display.textContent = `${scoreP2}`;
-    p1Display.textContent = `${scoreP1}`;
-    pointP1.disabled = false;
-    pointP2.disabled = false;
-    // removes classes so that they can be re-added on subsequent games
-    p1Display.classList.remove('winner', 'loser');
-    p2Display.classList.remove('winner', 'loser');
-
+    for (let p of [p1, p2]) {
+        p.score = 0;
+        p.display.textContent = `${p.score}`;
+        p.button.disabled = false;
+        // removes classes so that they can be re-added on subsequent games
+        p.display.classList.remove('winner', 'loser');
+    }
 }
-
-
-
